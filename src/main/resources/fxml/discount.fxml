@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.name.restaurant.controller.DiscountController">
+    <children>
+        <HBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <Spinner fx:id="discount" />
+            <Label text="\%">
+               <HBox.margin>
+                  <Insets left="-15.0" />
+               </HBox.margin></Label>
+                <Button mnemonicParsing="false" onAction="#discount" text="скидка" />
+            </children>
+            <padding>
+                <Insets fx:id="add" bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.name.restaurant.controller.MainController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+               <children>
+                  <HBox>
+                     <children>
+                        <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" visible="false" HBox.hgrow="ALWAYS" />
+                        <Label text="Управление" />
+                        <Button disable="true" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="Button" visible="false" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <VBox fx:id="controlVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_CENTER">
+                     <children>
+                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#print" HBox.hgrow="ALWAYS">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/print.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+               <children>
+                  <TabPane fx:id="tables" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS" />
+                  <VBox>
+                     <HBox alignment="CENTER">
+                        <VBox.margin>
+                           <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </VBox.margin>
+                        <VBox alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Итог" />
+                           <Text fx:id="resultText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Бонус" />
+                           <Text fx:id="discountText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <Text strokeType="OUTSIDE" strokeWidth="0.0" text="К оплате" />
+                           <Text fx:id="forPaymentText" strokeType="OUTSIDE" strokeWidth="0.0" text="-" />
+                        </VBox>
+                     </HBox>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</AnchorPane>

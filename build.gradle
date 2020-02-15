@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    id 'edu.sc.seis.launch4j' version '2.4.6'
+}
+//версия программы
+def versions = '0.0.0.1'
+//имя программы
+def name = 'Name Progect'
+//имя создателя
+def author = 'author'
+def main = 'ru.name.restaurant.Main'
+launch4j {
+    mainClassName = main
+    outfile = name + versions + ".exe"
+    version = versions
+    textVersion = versions
+
+    companyName = author
+    copyright = author
+    launch4j.language = 'RUSSIAN'
+
+//    launch4j.icon = "B:\\fon1 (1).ico"
+    internalName = name
+}
+
+
+apply plugin: "edu.sc.seis.launch4j"
+group name
+version versions
+sourceCompatibility = 1.8
+compileJava.options.encoding = "UTF-8"
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+jar {
+    exclude 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.SF'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    manifest {
+        attributes(
+                'Class-Path': configurations.runtime.files.collect { "lib/$it.name" }.join(' '),
+                'Main-Class': main
+        )
+    }
+}
