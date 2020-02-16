@@ -22,7 +22,7 @@
                   <VBox fx:id="controlVBox" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="10.0" VBox.vgrow="ALWAYS" />
                   <HBox alignment="TOP_CENTER">
                      <children>
-                        <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#print" HBox.hgrow="ALWAYS">
+                        <Button alignment="CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#print" textAlignment="CENTER" HBox.hgrow="ALWAYS">
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

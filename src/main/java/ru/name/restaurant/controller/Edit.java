@@ -98,7 +98,7 @@ public class Edit {
         observableListsTAble.get(id).get(idItem).setKol(Integer.parseInt(quantity.getText()));
         observableListsTAble.get(id).get(idItem).setName(name);
         observableListsTAble.get(id).get(idItem).setPrice(price);
-        observableListsTAble.get(id).add(new Table(1, 2, 3, "4"));
+        observableListsTAble.get(id).add(new Table(1, 2, 3, "4","5"));
         observableListsTAble.get(id).remove(observableListsTAble.get(id).size() - 1);
 
         int price = 0;

@@ -25,6 +25,7 @@ public class AddController {
     public TextField quantity;
     public Insets add;
     static ArrayList<TableView> tableList;
+    public TextField customer;
     int id, i;
     static ArrayList<ObservableList<Table>> observableListsTAble;
     GetTexts getTexts;
@@ -73,7 +74,7 @@ public class AddController {
     }
 
     public void add(ActionEvent actionEvent) {
-        observableListsTAble.get(id).add(new Table(observableListsTAble.get(id).size() + 1, Integer.parseInt(quantity.getText()), i * Integer.parseInt(quantity.getText()), name));
+        observableListsTAble.get(id).add(new Table(observableListsTAble.get(id).size() + 1, Integer.parseInt(quantity.getText()), i * Integer.parseInt(quantity.getText()), name,customer.getText()));
 
         int price = 0;
         for (Table t :

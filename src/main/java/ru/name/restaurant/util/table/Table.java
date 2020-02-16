@@ -2,20 +2,23 @@ package ru.name.restaurant.util.table;
 
 public class Table {
     private int number, kol, price;
-    private String name;
-
+    private String name,customer;
     /**
      * @param number номер столбца
      * @param kol    кол столбца
      * @param price  цена
      * @param name   имя
      */
-    public Table(int number, int kol, int price, String name) {
+    public Table(int number, int kol, int price, String name, String customer) {
         this.number = number;
         this.kol = kol;
         this.price = price;
         this.name = name;
+        this.customer = customer;
     }
+
+
+
 
     public int getNumber() {
         return number;
@@ -47,5 +50,13 @@ public class Table {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 }

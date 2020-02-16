@@ -34,7 +34,7 @@ public class MainController {
     static ArrayList<String> nameListButton = new ArrayList<>();
     static ArrayList<Button> buttonList = new ArrayList<>();
     static ArrayList<TableView> tableList = new ArrayList<>();
-    static ArrayList<ObservableList<Table>> observableListsTAble = new ArrayList<>();
+   public static ArrayList<ObservableList<Table>> observableListsTAble = new ArrayList<>();
 
     static StageDialog stageDialog;
 
@@ -77,8 +77,6 @@ public class MainController {
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
-                                System.out.println(Main.stage.getWidth());
-                                System.out.println(Main.stage.getHeight());
                                 observableListsTAble.get(id).clear();
                                 tableList.get(id).setItems(observableListsTAble.get(id));
                                 discount.get(id);
@@ -113,11 +111,13 @@ public class MainController {
             price.setCellValueFactory(new PropertyValueFactory<>("price"));
             TableColumn<Table, String> name = new TableColumn<Table, String>("название");
             name.setCellValueFactory(new PropertyValueFactory<>("name"));
+            TableColumn<Table, String> customer = new TableColumn<Table, String>("Заказчик");
+            customer.setCellValueFactory(new PropertyValueFactory<>("customer"));
             discount.add(0);
 
             ObservableList<Table> tableColumnObservableList = FXCollections.observableArrayList();
             observableListsTAble.add(tableColumnObservableList);
-            table.getColumns().addAll(number, kol, price, name);
+            table.getColumns().addAll(number, kol, price, name,customer);
 
             table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
             tab.setContent(table);
@@ -174,8 +174,8 @@ public class MainController {
     public void print(ActionEvent actionEvent) {
         try {
 
-            PaintDemo paintDemo = new PaintDemo(observableListsTAble.get(id));
-
+            //PaintDemo paintDemo = new PaintDemo(observableListsTAble.get(id));
+            new StageDialog("print");
         } catch (Exception e) {
         }
 
