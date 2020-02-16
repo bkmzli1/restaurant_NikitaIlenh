@@ -48,7 +48,7 @@ public class MainController {
         nameListButton.add("Добавить скидку");
         nameListButton.add("Удалить заказ");
         nameListButton.add("Очистить заказ");
-        nameListButton.add("Изменить заказ");
+
 
         for (String name :
                 nameListButton) {
