@@ -10,11 +10,9 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import ru.name.restaurant.Main;
 import ru.name.restaurant.util.GetTexts;
 import ru.name.restaurant.util.stage.StageDialog;
 import ru.name.restaurant.util.table.Table;
-import ru.name.restaurant.util.print.PaintDemo;
 
 import java.util.ArrayList;
 
@@ -34,7 +32,7 @@ public class MainController {
     static ArrayList<String> nameListButton = new ArrayList<>();
     static ArrayList<Button> buttonList = new ArrayList<>();
     static ArrayList<TableView> tableList = new ArrayList<>();
-   public static ArrayList<ObservableList<Table>> observableListsTAble = new ArrayList<>();
+    public static ArrayList<ObservableList<Table>> observableListsTAble = new ArrayList<>();
 
     static StageDialog stageDialog;
 
@@ -48,7 +46,7 @@ public class MainController {
         nameListButton.add("Добавить скидку");
         nameListButton.add("Удалить заказ");
         nameListButton.add("Очистить заказ");
-
+        // nameListButton.add("Изменить заказ");
 
         for (String name :
                 nameListButton) {
@@ -85,7 +83,6 @@ public class MainController {
                                 discountText.setText("-");
 
 
-
                             }
                         });
 
@@ -117,7 +114,7 @@ public class MainController {
 
             ObservableList<Table> tableColumnObservableList = FXCollections.observableArrayList();
             observableListsTAble.add(tableColumnObservableList);
-            table.getColumns().addAll(number, kol, price, name,customer);
+            table.getColumns().addAll(number, kol, price, name, customer);
 
             table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
             tab.setContent(table);

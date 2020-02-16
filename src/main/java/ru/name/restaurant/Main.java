@@ -54,9 +54,9 @@ public class Main extends Application {
                 System.exit(0);
             }
         });
-        stage.setMaximized(true);
+       // stage.setMaximized(true);
 
-        stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
 
         this.stage = stage;

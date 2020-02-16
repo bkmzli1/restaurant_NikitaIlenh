@@ -30,16 +30,18 @@ public class Edit {
     String name;
 
     public void initialize() {
+        PlanetDAO editDAdO = new PlanetDAO();
         textProperty(quantity);
         tableList = MainController.tableList;
         getTexts = MainController.getTexts;
         observableListsTAble = MainController.observableListsTAble;
         id = MainController.id;
         PlanetDAO optDAdO = new PlanetDAO();
-        PlanetDAO editDAdO = new PlanetDAO();
+
 
         for (int j = 0; j < observableListsTAble.get(id).size(); j++) {
-            editDAdO.load(Integer.parseInt(observableListsTAble.get(id).get(j).getName()), (j + 1) + "", 1);
+            System.out.println(Integer.parseInt(observableListsTAble.get(id).get(j).getName() + (j + 1) + "" + observableListsTAble.get(id).get(j).getPrice()));;
+            editDAdO.load(Integer.parseInt(observableListsTAble.get(id).get(j).getName()), (j + 1) + "", observableListsTAble.get(id).get(j).getPrice());
         }
         ChangeListener<Planet> changeListener2 = (observable, oldValue, newValue) -> {
             idItem = Integer.parseInt(newValue.getName()) - 1;
@@ -70,9 +72,8 @@ public class Edit {
         optDAdO.load(zz++, "Стейк из телятины миньон", 597);
 
 
-        menu.setItems(optDAdO.getList());
-
         ChangeListener<Planet> changeListener = (observable, oldValue, newValue) -> {
+            System.out.println(newValue.getName());
             price = newValue.getCena();
             name = newValue.getName() + price + "р.";
 
