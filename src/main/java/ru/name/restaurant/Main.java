@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
@@ -53,11 +54,13 @@ public class Main extends Application {
                 System.exit(0);
             }
         });
-        stage.setWidth(809);
-        stage.setHeight(437);
+        stage.setMaximized(true);
+
+        stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+
         this.stage = stage;
-        //stage.setResizable(true);
+
 
     }
 }

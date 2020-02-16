@@ -17,8 +17,8 @@ public class PlanetDAO {
         reload();
     }
     //добовляет строчку в лист
-    public void load(String code, String name) {
-        Planet earth = new Planet(code, name);
+    public void load(int code, String name,int cena) {
+        Planet earth = new Planet(code, name,cena);
         arrayList.add(earth);
         ;
         reload();
@@ -33,8 +33,8 @@ public class PlanetDAO {
         return list;
     }
     //добовляет строчку в лист в конец
-    public void add(String code, String name) {
-        Planet earth = new Planet(code, name);
+    public void add(int code, String name,int cena) {
+        Planet earth = new Planet(code, name,cena);
         arrayList.add(arrayList.size() - 1, earth);
         reload();
     }

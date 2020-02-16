@@ -8,7 +8,7 @@
    <children>
       <HBox spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="quantity" promptText="кол" />
+            <Spinner fx:id="quantity" />
             <TextField fx:id="customer" promptText="имя заказчика" />
             <ChoiceBox fx:id="menu" prefHeight="5.0" prefWidth="150.0" />
             <Button mnemonicParsing="false" onAction="#add" text="добавить блюдо" />

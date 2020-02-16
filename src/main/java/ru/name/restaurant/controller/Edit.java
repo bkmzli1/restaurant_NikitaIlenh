@@ -8,7 +8,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import ru.name.restaurant.util.GetTexts;
-
 import ru.name.restaurant.util.Planet;
 import ru.name.restaurant.util.table.PlanetDAO;
 import ru.name.restaurant.util.table.Table;
@@ -40,10 +39,10 @@ public class Edit {
         PlanetDAO editDAdO = new PlanetDAO();
 
         for (int j = 0; j < observableListsTAble.get(id).size(); j++) {
-            editDAdO.load(observableListsTAble.get(id).get(j).getName(), (j + 1) + "");
+            editDAdO.load(Integer.parseInt(observableListsTAble.get(id).get(j).getName()), (j + 1) + "", 1);
         }
         ChangeListener<Planet> changeListener2 = (observable, oldValue, newValue) -> {
-            idItem = Integer.parseInt(newValue.getName())-1;
+            idItem = Integer.parseInt(newValue.getName()) - 1;
             quantity.setText(String.valueOf(observableListsTAble.get(id).get(idItem).getKol()));
             String s = observableListsTAble.get(id).get(idItem).getName();
             for (int i = 0; i < optDAdO.getList().size(); i++) {
@@ -58,36 +57,25 @@ public class Edit {
         idCB.getSelectionModel().selectedItemProperty().addListener(changeListener2);
         idCB.setItems(editDAdO.getList());
 
-        optDAdO.load("hish", "рыба 900 руб.");
-        optDAdO.load("1", "пицца 100г 40 руб.");
-        optDAdO.load("2", "анна 5 лет турмы 1000 руб.");
-        optDAdO.load("3", "хз 3234 руб.");
-        optDAdO.load("4", "не придумал 000 руб.");
-        menu.setItems(optDAdO.getList());
-        ChangeListener<Planet> changeListener = (observable, oldValue, newValue) -> {
+        int zz = 0;
+        optDAdO.load(zz++, "Тар-тар из телятины", 350);
+        optDAdO.load(zz++, "Закуска от Остапа к хреновухе", 570);
+        optDAdO.load(zz++, "Салат с рукколой и креветками", 549);
+        optDAdO.load(zz++, "Теплый салат с беконом", 369);
+        optDAdO.load(zz++, "Фиеста", 500);
+        optDAdO.load(zz++, "Жемчужина", 630);
+        optDAdO.load(zz++, "Жульен из кальмаров", 320);
+        optDAdO.load(zz++, "Дорадо на гриле", 850);
+        optDAdO.load(zz++, "Стейк палтуса с золотистой корочкой", 950);
+        optDAdO.load(zz++, "Стейк из телятины миньон", 597);
 
-            switch (newValue.getCode()) {
-                case "hish":
-                    price = 900;
-                    name = "рыба " + price + " руб.";
-                    break;
-                case "1":
-                    price = 40;
-                    name = "пицца " + price + " руб.";
-                    break;
-                case "2":
-                    price = 1000;
-                    name = "анна " + price + " руб.";
-                    break;
-                case "3":
-                    price = 3234;
-                    name = "хз " + price + " руб.";
-                    break;
-                case "4":
-                    price = 000;
-                    name = "не придумал " + price + " руб.";
-                    break;
-            }
+
+        menu.setItems(optDAdO.getList());
+
+        ChangeListener<Planet> changeListener = (observable, oldValue, newValue) -> {
+            price = newValue.getCena();
+            name = newValue.getName() + price + "р.";
+
         };
         menu.setItems(optDAdO.getList());
 
@@ -98,7 +86,7 @@ public class Edit {
         observableListsTAble.get(id).get(idItem).setKol(Integer.parseInt(quantity.getText()));
         observableListsTAble.get(id).get(idItem).setName(name);
         observableListsTAble.get(id).get(idItem).setPrice(price);
-        observableListsTAble.get(id).add(new Table(1, 2, 3, "4","5"));
+        observableListsTAble.get(id).add(new Table(1, 2, 3, "4", "5"));
         observableListsTAble.get(id).remove(observableListsTAble.get(id).size() - 1);
 
         int price = 0;

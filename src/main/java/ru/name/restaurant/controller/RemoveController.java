@@ -18,7 +18,7 @@ public class RemoveController {
     public void initialize() {
         PlanetDAO optDAdO = new PlanetDAO();
         for (int i = 0; i < observableListsTAble.get(id).size(); i++) {
-            optDAdO.load("" + i, observableListsTAble.get(id).get(i).getNumber() + "");
+            optDAdO.load( i, observableListsTAble.get(id).get(i).getNumber() + "",1);
         }
 
         menu.setItems(optDAdO.getList());

@@ -26,7 +26,7 @@ public class DiscountController {
         discount.setValueFactory(valueFactory);
 
     }
-    class MyConverter extends StringConverter<Integer> {
+    static class MyConverter extends StringConverter<Integer> {
 
         @Override
         public String toString(Integer object) {
